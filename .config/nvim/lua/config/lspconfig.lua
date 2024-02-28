@@ -1,0 +1,13 @@
+-- Setup language servers.
+local lspconfig = require("lspconfig")
+lspconfig.intelephense.setup({})
+lspconfig.tailwindcss.setup({})
+lspconfig.eslint.setup({})
+lspconfig.tsserver.setup({})
+lspconfig.jsonls.setup({})
+lspconfig.html.setup({})
+lspconfig.emmet_language_server.setup({})
+lspconfig.terraformls.setup({})
+lspconfig.volar.setup({})
+lspconfig.cssls.setup({})
+lspconfig.astro.setup({})

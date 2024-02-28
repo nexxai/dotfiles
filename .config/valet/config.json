@@ -1,0 +1,8 @@
+{
+    "tld": "test",
+    "paths": [
+        "/Users/nexxai/.config/valet/Sites",
+        "/Users/nexxai/code"
+    ],
+    "loopback": "127.0.0.1"
+}

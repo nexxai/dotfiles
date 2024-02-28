@@ -1,0 +1,12 @@
+*.log
+*history
+.config/valet/Log/*
+.config/Questrade
+.config/qBittorrent
+.config/doctl
+.config/thefuck
+.config/rclone
+.config/valet/Certificates
+.config/valet/CA
+.config/wireshark
+.config/raycast/extensions

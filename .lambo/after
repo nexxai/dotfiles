@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+
+# Update the base TestCase to include our shortcuts
+cat > tests/TestCase.php <<EOL
+<?php
+
+namespace Tests;
+
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
+{
+	use CreatesApplication;
+
+	protected function signIn(\$user = null)
+	{
+		\$user = \$user ?: create(\App\User::class);
+
+		\$this->be(\$user);
+
+		return \$this;
+	}
+
+	protected function superadmin()
+	{
+		\$user = create(\App\User::class, ['email' => 'switchsanitize@gmail.com']);
+
+		\$this->be(\$user);
+
+		return \$this;
+	}
+
+	/**
+	 * Set the URL of the previous request.
+	 *
+	 * @param string \$url
+	 *
+	 * @return \$this
+	 */
+	public function from(string \$url)
+	{
+		\$this->app['session']->setPreviousUrl(\$url);
+
+		return \$this;
+	}
+}
+EOL
+
+# Create the test utilities/functions.php
+mkdir tests/utilities
+cat > tests/utilities/functions.php <<EOL
+<?php
+
+function create(\$class, \$attributes = [])
+{
+	return \$class::factory()->create(\$attributes);
+}
+
+function make(\$class, \$attributes = [])
+{
+	return \$class::factory()->make(\$attributes);
+}
+EOL
+
+# Add functions.php to composer.json
+php -r '$json = json_decode(file_get_contents("composer.json"), true); $json["autoload-dev"]["files"][] = "tests/utilities/functions.php"; file_put_contents("composer.json", json_encode($json));'
+composer dump-autoload
+
+# Run npm run dev once to build out the JS for the first time
+npm install
+npm run dev
+
+# Install additional composer dependencies as you would from the command line.
+# echo "
+# Installing Composer Dependencies
+# "
+# composer require tightenco/mailthief tightenco/quicksand
+
+# To copy standard files to new lambo project place them in ~/.lambo/includes directory.
+# echo "
+# Copying Include Files
+# "
+# cp -R ~/.lambo/includes/ \$PROJECTPATH
+
+# To add a git commit after given modifications
+# echo "
+# Committing after modifications to Git
+# "
+# git add .
+# git commit -am "Initialize Composer dependencies and additional files."
+
+php artisan stub:publish
+
+cat > stubs/test.unit.stub <<EOL
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class {{ class }} extends TestCase
+{
+	use RefreshDatabase;
+
+	public function setUp(): void
+	{
+		parent::setUp();
+	}
+
+    	
+}
+EOL
+
+cat > stubs/test.stub <<EOL
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class {{ class }} extends TestCase
+{
+	use RefreshDatabase;
+
+	public function setUp(): void
+	{
+		parent::setUp();
+	}
+
+	
+}
+EOL
+
+cat > stubs/model.stub <<EOL
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+    protected \$fillable = [
+
+    ];
+}
+EOL

@@ -1,0 +1,29 @@
+import = [
+    "~/.config/alacritty/themes/themes/palenight.toml"
+]
+
+[window]
+padding = { x = 13, y = 13 }
+dynamic_padding = true
+dimensions = { lines = 25, columns = 166 }
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 15
+offset = { x = 0, y = 24 }
+glyph_offset = { x = 0, y = 12 }
+
+[colors]
+cursor = { cursor = "#ffdd00" }
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+foreground = "#959dcb"
+background = "#292d3e"
+bright_foreground = "#edeeed"
+
+[cursor]
+thickness = 0.5
