@@ -237,18 +237,19 @@ return {
         },
         sources = cmp.config.sources({
           { name = "luasnip", max_item_count = 5 },
-          { name = "codeium" },
           {
             name = "nvim_lsp",
-            max_item_count = 15,
+            max_item_count = 5,
             entry_filter = function(entry)
               return cmp.lsp.CompletionItemKind.Snippet ~= entry:get_kind()
             end,
           },
+          { name = "codeium", max_item_count = 5 },
           { name = "path", max_item_count = 5 },
         }, {
           { name = "buffer", max_item_count = 5 },
         }),
+        completion = { completeopt = "menu,menuone,noinsert" },
       }
     end,
   },
