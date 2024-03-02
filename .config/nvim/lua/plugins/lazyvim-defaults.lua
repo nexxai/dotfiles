@@ -9,18 +9,19 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       -- add a keymap to browse plugin files
-      -- stylua: ignore
       {
         "<leader>fp",
-        function() require("telescope.builtin").find_files({ no_ignore = true }) end,
+        function()
+          require("telescope.builtin").find_files({ no_ignore = true })
+        end,
         desc = "Find Plugin File",
       },
     },
     -- change some options
     opts = {
       defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
+        layout_strategy = "vertical",
+        layout_config = { prompt_position = "top", width = 0.5 },
         sorting_strategy = "ascending",
         winblend = 0,
       },
@@ -249,6 +250,7 @@ return {
         }, {
           { name = "buffer", max_item_count = 5 },
         }),
+
         completion = { completeopt = "menu,menuone,noinsert" },
       }
     end,

@@ -2,10 +2,24 @@ import = [
     "~/.config/alacritty/themes/themes/palenight.toml"
 ]
 
+[shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["new", "-A", "-s default"]
+
+[keyboard]
+bindings = [
+    { key = "t", mods = "Super", chars = "\u0002c" }, # Create new tab (tmux)
+    { key = "w", mods = "Super", chars = "\u0002&" }, # Close current tab (tmux)
+    { key = "Tab", mods = "Control", chars = "\u0002\u000c" }, # Switch to next tab (tmux)
+    { key = "Tab", mods = "Control|Shift", chars = "\u0002\u0008" }, # Switch to previous tab (tmux)
+]
+
 [window]
 padding = { x = 13, y = 13 }
+position = { x = 170, y = 203 }
 dynamic_padding = true
-dimensions = { lines = 25, columns = 166 }
+dimensions = { lines = 25, columns = 165 }
+decorations = "Buttonless"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }

@@ -1,0 +1,4 @@
+bind-key & kill-window
+
+set -g default-terminal "tmux-256color"
+set-option -ga terminal-overrides ",*256col*:Tc"
