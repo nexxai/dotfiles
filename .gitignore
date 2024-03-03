@@ -1,5 +1,6 @@
 *.log
 *history
+.DS_Store
 .config/valet/Log/*
 .config/Questrade
 .config/qBittorrent
