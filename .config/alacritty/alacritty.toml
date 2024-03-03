@@ -2,6 +2,9 @@ import = [
     "~/.config/alacritty/themes/themes/palenight.toml"
 ]
 
+[env]
+TERM = "xterm-256color"
+
 [shell]
 program = "/opt/homebrew/bin/tmux"
 args = ["new", "-A", "-s default"]
@@ -10,8 +13,8 @@ args = ["new", "-A", "-s default"]
 bindings = [
     { key = "t", mods = "Super", chars = "\u0002c" }, # Create new tab (tmux)
     { key = "w", mods = "Super", chars = "\u0002&" }, # Close current tab (tmux)
-    { key = "Tab", mods = "Control", chars = "\u0002\u000c" }, # Switch to next tab (tmux)
-    { key = "Tab", mods = "Control|Shift", chars = "\u0002\u0008" }, # Switch to previous tab (tmux)
+    { key = "Tab", mods = "Control", chars = "\u0002n" }, # Switch to next tab (tmux)
+    { key = "Tab", mods = "Control|Shift", chars = "\u0002p" }, # Switch to previous tab (tmux)
 ]
 
 [window]
