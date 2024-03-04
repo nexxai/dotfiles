@@ -1,7 +1,14 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
+
+-- Disable annoying command line typo
+vim.keymap.set("n", "q:", ":q<cr>")
+vim.keymap.set("n", "qa:", ":qa<cr>")
+
+-- Automatically add semicolon or comma at the end of the line in INSERT mode
+vim.keymap.set("i", ";;", "<ESC>A;")
+vim.keymap.set("i", ",,", "<ESC>A,")
 
 -- Live grep
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>")
