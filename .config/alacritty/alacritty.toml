@@ -15,7 +15,7 @@ bindings = [
     { key = "w", mods = "Super", chars = "\u0002&" }, # Close current tab (tmux)
     { key = "Tab", mods = "Control", chars = "\u0002n" }, # Switch to next tab (tmux)
     { key = "Tab", mods = "Control|Shift", chars = "\u0002p" }, # Switch to previous tab (tmux)
-    { key = "/", mods = "Super", chars = " aq" }, # Switch to next tab (alacritty)
+    { key = "/", mods = "Super", chars = " aq" }, # Toggle comments in vim 
 ]
 
 [window]
