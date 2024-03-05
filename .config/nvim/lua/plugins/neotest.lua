@@ -9,7 +9,6 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      -- "theutz/neotest-pest",
       "V13Axel/neotest-pest",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
