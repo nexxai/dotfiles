@@ -16,6 +16,7 @@ alias vim="nvim"
 
 alias p="vendor/bin/pest --parallel"
 alias phpunit="vendor/bin/phpunit"
+alias phpstan="vendor/bin/phpstan"
 alias gcm="git checkout master"
 alias fsrm="ssh justinsmith@184.70.101.122"
 alias ploi="ssh ploi@138.68.247.10"
