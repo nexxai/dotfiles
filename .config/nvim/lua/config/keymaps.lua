@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Proxy common typos
+vim.api.nvim_create_user_command('Bd', ':bd', { bang = true })
+vim.api.nvim_create_user_command('Qa', ':qa', { bang = true })
+
 -- Disable annoying command line typo
 vim.keymap.set("n", "q:", ":q<cr>")
 vim.keymap.set("n", "qa:", ":qa<cr>")
