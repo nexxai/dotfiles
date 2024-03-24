@@ -96,6 +96,7 @@ return {
         "tsx",
         "typescript",
         "vim",
+        "vue",
         "yaml",
       },
     },
@@ -152,6 +153,7 @@ return {
         "shfmt",
         "stylua",
         "tailwindcss-language-server",
+        "vue-language-server"
       },
     },
   },
