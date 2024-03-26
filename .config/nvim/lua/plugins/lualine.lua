@@ -27,6 +27,7 @@ return {
             end,
           },
         },
+        lualine_b = { "diff", "diagnostics" },
         lualine_x = { "require'wttr'.text" },
       },
     })
